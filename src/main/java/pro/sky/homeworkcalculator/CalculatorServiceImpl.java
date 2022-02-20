@@ -4,43 +4,29 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorServiceInterface {
-    public static String hello() {
+    public String hello() {
         return "<b>Добро пожаловать в калькулятор</b>";
     }
 
-    public static String plus(String num1, String num2) {
-        double a = Integer.parseInt(num1);
-        double b = Integer.parseInt(num2);
-        double sum = a + b;
-        String c = String.valueOf(sum);
-        return num1 + "+" + num2 + "=" + c;
+    public double plus(double num1, double num2) {
+        double sum = num1 + num2;
+        return sum;
     }
 
-    static String minus(String num1, String num2) {
-        double a = Integer.parseInt(num1);
-        double b = Integer.parseInt(num2);
-        double sum = a - b;
-        String c = String.valueOf(sum);
-        return num1 + "-" + num2 + "=" + c;
+    public double minus(double num1, double num2) {
+        double sum = num1 - num2;
+        return sum;
     }
 
-    static String multiply(String num1, String num2) {
-        double a = Integer.parseInt(num1);
-        double b = Integer.parseInt(num2);
-        double sum = a * b;
-        String c = String.valueOf(sum);
-        return num1 + "*" + num2 + "=" + c;
+    public double multiply(double num1, double num2) {
+        double sum = num1 * num2;
+        return sum;
     }
 
-    static String divide(String num1, String num2) {
-        double a = Integer.parseInt(num1);
-        double b = Integer.parseInt(num2);
-        if (b == 0) {
-            return "Делить на 0 нельзя, измените 2-ой параметр";
-        }
-        double sum = a / b;
+    public double divide(double num1, double num2) {
+        double sum = num1 / num2;
         String c = String.valueOf(sum);
-        return num1 + "/" + num2 + "=" + c;
+        return sum;
     }
 
 }

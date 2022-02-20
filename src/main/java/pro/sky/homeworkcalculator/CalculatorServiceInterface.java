@@ -1,23 +1,13 @@
 package pro.sky.homeworkcalculator;
 
 public interface CalculatorServiceInterface {
-    static String hello() {
-        return null;
-    }
+    String hello();
 
-    static String plus(String num1, String num2) {
-        return null;
-    }
+    double plus(double num1, double num2);
 
-    static String minus(String num1, String num2) {
-        return null;
-    }
+    double minus(double num1, double num2);
 
-    static String multiply(String num1, String num2) {
-       return null;
-    }
+    double multiply(double num1, double num2);
 
-    static String divide(String num1, String num2) {
-        return null;
-    }
+    double divide(double num1, double num2);
 }

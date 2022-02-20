@@ -16,26 +16,35 @@ public class CalculatorController {
 
     @RequestMapping("/calculator")
     public String hello() {
-        return CalculatorServiceImpl.hello();
+        return hello();
     }
 
     @RequestMapping("/plus")
-    public String plus(@RequestParam(required = true) String num1,
-                      @RequestParam(required = true) String num2){
-        return CalculatorServiceImpl.plus(num1,num2);
+    public String plus(@RequestParam(required = true) double num1,
+                      @RequestParam(required = true) double num2){
+        return num1 + "+" + num2 + "=" + plus(num1,num2);
 
     }
 
     @RequestMapping(path = "/minus")
-    public String minus(@RequestParam(required = true) String num1,
-                       @RequestParam(required = true) String num2){
-        return CalculatorServiceImpl.minus(num1,num2);
+    public String minus(@RequestParam(required = true) double num1,
+                       @RequestParam(required = true) double num2){
+        return num1 + "-" + num2 + "=" + minus(num1,num2);
+    }
+
+    @RequestMapping(path = "/multiply")
+    public String multiply(@RequestParam(required = true) double num1,
+                        @RequestParam(required = true) double num2){
+        return num1 + "*" + num2 + "=" + multiply(num1,num2);
     }
 
     @RequestMapping(path = "/divide")
-    public String divide(@RequestParam(required = true) String num1,
-                        @RequestParam(required = true) String num2){
-        return CalculatorServiceImpl.divide(num1,num2);
+    public String divide(@RequestParam(required = true) double num1,
+                        @RequestParam(required = true) double num2){
+        if (num2 == 0) {
+            return "Делить на 0 нельзя, измените 2-ой параметр";
+        }
+        return num1 + "/" + num2 + "=" + divide(num1,num2);
     }
 
 }
